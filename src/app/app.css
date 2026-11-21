@@ -1,0 +1,47 @@
+:host { display: block; }
+.store-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 28px 40px; border-bottom: 1px solid #e4e4ed; }
+.brand { display: flex; align-items: center; gap: 12px; color: #242039; text-decoration: none; font-size: 1.35rem; font-weight: 750; }
+.brand-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px 14px 14px 3px; color: white; background: #6c4ccf; font-size: 1.7rem; }
+.brand small { display: block; margin-top: 2px; color: #676375; font-size: .875rem; font-weight: 400; }
+.store-status { display: flex; align-items: center; gap: 9px; color: #216448; background: #e9f6ef; padding: 9px 14px; border-radius: 30px; font-size: .875rem; font-weight: 600; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.store-status.closed { color: #813e27; background: #fff0e9; }
+main { padding: 48px 40px 58px; }
+.intro { margin-bottom: 38px; }
+.eyebrow { color: #6b50b7; font-size: .875rem; letter-spacing: .13em; font-weight: 700; }
+h1 { font-size: clamp(2.2rem, 4vw, 3.3rem); letter-spacing: -.045em; line-height: 1.12; margin: 14px 0 18px; font-weight: 750; }
+.intro > p:last-child { color: #676375; max-width: 580px; line-height: 1.7; }
+.catalog-layout { display: grid; grid-template-columns: 195px 1fr; gap: 32px; align-items: start; }
+.categories { padding-top: 16px; }
+.categories h2 { font-size: 1rem; margin: 0 0 20px; }
+.categories ul { padding: 0; margin: 0; list-style: none; }
+.categories li { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; padding: 12px; background: #f0edf9; border-radius: 9px; color: #514374; overflow-wrap: anywhere; }
+.category-mark { width: 8px; height: 8px; border: 1.5px solid #8569be; border-radius: 2px; flex-shrink: 0; }
+.store-info { margin-top: 36px; padding-top: 22px; border-top: 1px solid #e4e4ed; }
+.store-info .eyebrow { font-size: .875rem; }
+.store-info p { color: #676375; line-height: 1.6; margin: 7px 0; }
+.store-info .manager { color: #312b45; font-weight: 600; }
+.product { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e5e2ed; border-radius: 20px; overflow: hidden; background: white; }
+.product-art { min-width: 0; background: #e5eee9; padding: 28px 16px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
+.art-label { font-size: .875rem; letter-spacing: .1em; color: #486553; text-align: center; }
+.product-art img { width: 100%; height: auto; max-width: 420px; margin: 12px 0; }
+.art-caption { font-size: .875rem; color: #486553; }
+.product-info { padding: 34px 28px; min-width: 0; }
+.product-info .eyebrow { letter-spacing: .09em; }
+.product h2 { margin: 14px 0; font-size: 2rem; line-height: 1.15; letter-spacing: -.04em; overflow-wrap: anywhere; }
+.description { color: #676375; line-height: 1.7; }
+.price { font-size: 2.3rem; font-weight: 700; letter-spacing: -.04em; margin: 26px 0 12px; }
+.price > span { font-size: 1.2rem; font-weight: 500; letter-spacing: 0; }
+.availability { display: flex; gap: 8px; color: #216448; font-size: .95rem; font-weight: 600; }
+.availability.sold-out { color: #934829; }
+.product-note { display: flex; gap: 12px; padding-top: 22px; margin-top: 24px; border-top: 1px solid #e5e2ed; color: #6b50b7; }
+.product-note p { margin: 0; font-size: .875rem; line-height: 1.7; color: #3f384f; }
+.product-note p span { color: #676375; }
+details { margin-top: 26px; font-size: .875rem; color: #676375; line-height: 1.7; }
+summary { cursor: pointer; color: #514374; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #6c4ccf; outline-offset: 5px; }
+footer { padding: 25px 40px; border-top: 1px solid #e4e4ed; display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-size: .875rem; color: #676375; }
+footer > span { font-weight: 700; color: #514374; }
+footer p { margin: 0; }
+@media (max-width: 1000px) { .catalog-layout { grid-template-columns: 170px 1fr; gap: 20px; } .product { grid-template-columns: 1fr; } .product-art img { max-width: 300px; } }
+@media (max-width: 620px) { .store-header, footer { padding: 22px 20px; } .brand { font-size: 1.1rem; } .brand small { max-width: 130px; } .store-status { padding: 9px 10px; } main { padding: 32px 20px; } .catalog-layout { grid-template-columns: 1fr; } .categories { padding: 0; } .categories ul { display: flex; flex-wrap: wrap; gap: 8px; } .categories li { margin: 0; } .store-info { margin: 20px 0; padding: 14px 0 0; } .product-info { padding: 28px 22px; } footer { align-items: start; flex-direction: column; } }

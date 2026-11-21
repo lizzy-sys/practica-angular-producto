@@ -1,0 +1,68 @@
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="store-header">
+  <a class="brand" href="./" aria-label="Inicio de la tienda">
+    <span class="brand-icon" aria-hidden="true">L</span>
+    <span>{{ nombreTienda }}<small>Lo esencial, contigo.</small></span>
+  </a>
+  <div class="store-status" [class.closed]="!tiendaAbierta" data-testid="tienda-estado">
+    @if (tiendaAbierta) {
+      <span class="status-dot" aria-hidden="true"></span> Tienda abierta
+    } @else {
+      <span class="status-dot" aria-hidden="true"></span> Tienda cerrada
+    }
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="intro">
+    <p class="eyebrow">OBJETOS PARA TU DÍA A DÍA</p>
+    <h1>Tu próxima compañera<br>de aventuras.</h1>
+    <p>Una selección de esenciales para estudiar, crear y llevar tus ideas a todas partes.</p>
+  </div>
+
+  <div class="catalog-layout">
+    <aside class="categories" aria-labelledby="categorias-titulo">
+      <h2 id="categorias-titulo">Nuestras categorías</h2>
+      <ul data-testid="categorias">
+        @for (categoria of categorias; track $index) {
+          <li><span aria-hidden="true" class="category-mark"></span>{{ categoria }}</li>
+        }
+      </ul>
+      <div class="store-info">
+        <p class="eyebrow">TE ATIENDE</p>
+        <p class="manager">{{ encargado }}</p>
+        <p>Sucursal {{ numeroSucursal }}</p>
+      </div>
+    </aside>
+
+    <article class="product" aria-labelledby="producto-titulo">
+      <div class="product-art">
+        <span class="art-label">DISEÑO QUE TE ACOMPAÑA</span>
+        <img src="mochila.svg" alt="Ilustración de una mochila violeta con bolsillo frontal y tirantes acolchados" width="500" height="500">
+        <span class="art-caption">Ligera. Práctica. Muy tú.</span>
+      </div>
+      <div class="product-info">
+        <p class="eyebrow">PRODUCTO DESTACADO</p>
+        <h2 id="producto-titulo" data-testid="producto-nombre">{{ producto.nombre }}</h2>
+        <p class="description">Todo lo que necesitas, en un solo lugar. Una mochila para acompañarte de clase en clase y en cada nuevo plan.</p>
+        <p class="price" data-testid="producto-precio"><span>Bs</span> {{ producto.precio | number:'1.2-2' }}</p>
+        <p class="availability" [class.sold-out]="!producto.disponible" data-testid="producto-estado">
+          @if (producto.disponible) {
+            <span aria-hidden="true">✓</span> Producto disponible
+          } @else {
+            <span aria-hidden="true">—</span> Producto agotado
+          }
+        </p>
+        <div class="product-note">
+          <span aria-hidden="true">✦</span>
+          <p>Un esencial para tus grandes ideas.<br><span>Consulta el producto en nuestra sucursal.</span></p>
+        </div>
+        <details>
+          <summary>Acerca de esta presentación</summary>
+          <p>Catálogo de demostración creado en Angular. El nombre, el precio, las categorías y los estados se muestran desde los datos de la tienda.</p>
+        </details>
+      </div>
+    </article>
+  </div>
+</main>
+<footer><span>{{ nombreTienda }}</span><p>Presentación de un producto · Práctica de Angular</p></footer>
